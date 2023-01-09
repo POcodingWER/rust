@@ -1,0 +1,29 @@
+// enum Result<T,E>{
+//     Ok(T),
+//     Err(E),
+// }
+
+fn check_error (input: i32) -> Result<(),()> {
+    if input % 2== 0 {
+        Ok(())
+    } else {
+        Err(())
+    }
+}
+
+
+fn main() {
+    let variable =  check_error(4);
+    println!("{:?}",variable.unwrap());
+    
+    if variable.is_ok() {
+        println!("{:?}",variable);
+    }else if variable.is_err() {
+        println!("홀수");
+    }
+
+    match variable {
+        Ok(_) => println!("짝수"),
+        Err(_) => println!("홀수"),
+    }
+}

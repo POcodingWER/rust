@@ -1,0 +1,33 @@
+
+enum Option<T> {
+    None,
+    Some(T),
+}
+
+fn take_num (value:Vec<i32>) -> Option<i32>{
+    if value.len() < 5{
+        None
+    } else {
+        Some(value[4])
+    }
+}
+
+fn main() {
+    let new_vec = vec![1,2,2,3,23,4];
+    let index = take_num(new_vec);
+    
+    // println!("{:?}",index.unwrap());
+    index.expect("숫자 부족 에러 ");
+    match index {
+        Some(num) => println!("{}",num),
+        None => println!("no num")
+    }
+
+    if index.is_some() {
+        println!("{:?}",index.unwrap())
+    }else if index.is_none() {
+        println!("no number")
+    }
+
+
+}

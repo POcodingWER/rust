@@ -1,0 +1,24 @@
+#[derive(Debug)]
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+
+fn main () {
+    let t1 = Message::Quit;
+    let t2 = Message::Move { x: 2, y: 3 };
+    let t3 = Message::Write("스트링".to_string());
+    let t4 = Message::ChangeColor(255, 200, 55);
+
+    // println!("{:?}",t2);
+
+    match t4 {
+        Message::ChangeColor(a,b,c)  => println!("{:?}",c),
+        _ => println!("아니용"),
+
+    }
+
+
+}

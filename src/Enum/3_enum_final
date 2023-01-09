@@ -1,0 +1,22 @@
+
+fn main () {
+    let my_vec =  vec![2,3,4,5];
+
+    //0
+    for index in 0..10{
+        println!("{:?}",my_vec.get(index));
+    }
+    //1
+    for index in 0..10{
+        match my_vec.get(index) {
+            Some(number) => println!("{}",number),
+            None =>{}
+        }
+    }
+    //2
+    for index in 0..10{
+        if let Some(number) = my_vec.get(index){
+            println!("{}",number);
+        }
+    }
+}
