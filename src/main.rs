@@ -1,35 +1,18 @@
-use std::ops::Add;
+use std::collections::HashMap;
 
-#[derive(Debug)]
-struct Country {
-    name: String,
-    population: u32,
-    gdp: u32,
-}
+struct Solution {}
 
-impl Country {
-    fn new(name: &str, population: u32, gdp: u32) -> Self {
-        Self {
-            name: name.to_string(),
-            population,
-            gdp,
+impl Solution {
+    pub fn count_vowel_strings(n: i32) -> i32 {
+        let mut add_num = 0;
+        for i in 1..=5 {
+            add_num += i;
         }
-    }
-}
-impl Add for Country {
-    type Output = Self;
-    fn add(self, other: Self) -> Self {
-        Self {
-            name:format!("{} and {}",self.name, other.name),
-            population: self.population+ other.population,
-            gdp:self.gdp+ other.gdp,
-        }
+        println!("{}",add_num); 
+        1
     }
 }
 fn main() {
-    let naurn = Country::new("Naurn",10670,160_000_000);
-    let vanuatu = Country::new("vanuatu",307815,820_000_000);
-    let micronesia = Country::new("micronesia",104468,367_000_000);
-
-    println!("naurn + vanuatu {:?}",naurn + vanuatu + micronesia)
+    let make_point_arry = Solution::count_vowel_strings(2);
+    println!("result {:?}", make_point_arry)
 }
